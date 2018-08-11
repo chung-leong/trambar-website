@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var DefinePlugin = Webpack.DefinePlugin;
 var SourceMapDevToolPlugin = Webpack.SourceMapDevToolPlugin;
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var event = process.env.npm_lifecycle_event;
 
@@ -33,21 +34,17 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'css-loader'
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: 'css-loader',
+                })
             },
             {
                 test: /\.scss$/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'sass-loader',
-                    }
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: 'css-loader!sass-loader',
+                })
             },
             {
                 test: /\.(jpeg|jpg|png|gif|svg)$/,
@@ -63,6 +60,7 @@ module.exports = {
             template: Path.resolve(`./src/index.html`),
             filename: Path.resolve(`./www/index.html`),
         }),
+        new ExtractTextPlugin("styles.css"),
     ],
     devtool: (event === 'build') ? 'inline-source-map' : false,
     devServer: {
