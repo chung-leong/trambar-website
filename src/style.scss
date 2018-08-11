@@ -1,6 +1,6 @@
-body {
+BODY {
     font-family: monospace;
-    font-size: 1.3em;
+    font-size: 1.25em;
     background-color: #eee;
     margin: 0;
     display: flex;
@@ -42,7 +42,7 @@ body {
 
         .text {
             flex: 1 1 auto;
-            padding: 1em 1em 1em 1em;
+            padding: 0 1em 0 1em;
             line-height: 135%;
         }
     }
@@ -72,9 +72,27 @@ body {
         margin-top: 0.5em;
     }
 
+    A {
+        &:link, &:visited {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &:link {
+            color: #000099;
+        }
+
+        &:visited {
+            color: #330099;
+        }
+    }
+
     .sketch {
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
         box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.25);
     }
 }

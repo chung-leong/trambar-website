@@ -24,10 +24,30 @@
         </header>
 
         <h2>What is Trambar?</h2>
-
         <section>
             <div class="text">
-
+            <p>
+                Trambar is a companion tool for GitLab. It lets you maintain a
+                Facebook-like newsfeed chronicling your development effort.
+                Stories are automatically extracted from a repo's activity log.
+                Users can also add their own stories, adorned with photos and
+                videos.
+            </p>
+            <p>
+                Trambar is meant to be a low-stakes, informal environment, a
+                place when programmers and non-programmers alike can feel at
+                home.
+            </p>
+            <p>
+                The backend of Trambar is an
+                <a href="https://github.com/chung-leong/trambar/blob/master/docs/getting-started.md" target="_blank">easy to deploy</a>
+                Docker app. The frontend runs on all modern browsers.
+                It's also available as an app on
+                <a href="https://play.google.com/store/apps/details?id=io.trambar.mobile" target="_blank">Android</a>,
+                <a href="https://itunes.apple.com/us/app/trambar/id1400086001?ls=1&mt=8" target="_blank">iOS</a>,
+                and
+                <a href="https://www.microsoft.com/en-us/p/trambar/9p887v1x7nkm" target="_blank">Windows Mobile</a>.
+            </p>
             </div>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/trambar-gitlab-cloud.jpg') %>">
@@ -35,21 +55,61 @@
         </section>
 
         <h2>Marginally useful information</h2>
-
         <section>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/threshold.jpg') %>">
             </div>
             <div class="text">
-
+                <p>
+                    Getting people to look at what they would otherwise
+                    overlook--that's Trambar's main purpose. IT workers are
+                    typically goal-oriented. They pay attention to information
+                    that helps them achieve their goals and ignore information
+                    that doesn't.
+                </p>
+                <p>
+                    Not useful is not the same as useless though. Information
+                    that fails to meet people's attention threshold often has
+                    some value. Cumulatively, it can add up to quite a bit.
+                </p>
+                <p>
+                    Git activity logs fall into this category. Knowledge
+                    that a push occurred is rarely useful to programmers, let
+                    alone those who don't code. It does indicate, however, that
+                    progress is being made. Seeing a steady stream of pushes
+                    can be reassuring, especially for team members who're not
+                    programmers. After all, their livelihoods too are tied to
+                    the code. Not knowing how this "thing" is evolving would
+                    otherwise leads to endless anxiety.
+                </p>
             </div>
         </section>
 
         <h2>Information of uncertain value</h2>
-
         <section>
             <div class="text">
-
+                <p>
+                    Unlike automation tools, people have a sense of shame.
+                    They won't continually create materials that inevitably get
+                    ignored. They will try to send only useful information to
+                    their colleagues.
+                </p>
+                <p>
+                    Doing so is easy when the information was requested.
+                    When information is unsolicited, judging its value becomes
+                    hard. The sender is unsure of the recipient's wants and needs.
+                </p>
+                <p>
+                    For example, someone makes a suggestion on a software feature.
+                    If the idea ends up in the final product, the information
+                    has a positive value. If the suggestion is ignored, its
+                    value is zero. If it involves substantial changes and causes
+                    an overworked programmer to blow a gasket, its value is negative.
+                </p>
+                <p>
+                    Trambar's low-stakes nature makes it a better place for
+                    this sort of information than high-stakes, frontline systems.
+                </p>
             </div>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/uncertainty.jpg') %>">
@@ -57,7 +117,6 @@
         </section>
 
         <h2>Relocating distractions</h2>
-
         <section>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/relocation.jpg') %>">
@@ -68,10 +127,15 @@
         </section>
 
         <h2>Chicken or the egg conundrum</h2>
-
         <section>
             <div class="text">
-
+                <p>
+                    Attempts to segregate information by priority often run into
+                    the chicken or the egg conundrum. People don't post things
+                    because they're convinced no one would look at them.
+                    Meanwhile, people don't visit the site because no one is
+                    posting there.
+                </p>
             </div>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/chicken-egg.jpg') %>">
@@ -79,7 +143,6 @@
         </section>
 
         <h2>Timing is everything</h2>
-
         <section>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/timing.jpg') %>">
@@ -90,7 +153,6 @@
         </section>
 
         <h2>Envoking the right mood</h2>
-
         <section>
             <div class="text">
 
@@ -101,7 +163,6 @@
         </section>
 
         <h2>Mobile considerations</h2>
-
         <section>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/mobile.jpg') %>">
@@ -112,7 +173,6 @@
         </section>
 
         <h2>Mixing work with pleasure</h2>
-
         <section>
             <div class="text">
 
@@ -123,7 +183,6 @@
         </section>
 
         <h2>Expanding the social circle</h2>
-
         <section>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/circle.jpg') %>">
@@ -133,11 +192,22 @@
             </div>
         </section>
 
-        <h2>Translating diff's</h2>
-
+        <h2>Creating sense out of diff's</h2>
         <section>
             <div class="text">
-
+                <p>
+                    Trambar features a simple, flexible
+                    <a href="https://github.com/chung-leong/trambar/blob/master/docs/decoration.md" target="_blank">source-tree decoration system</a>.
+                    Component descriptions, written from end-user prespective,
+                    are mapped to source files using <em>.gitignore</em> rules.
+                </p>
+                <p>
+                    These annotations can also serve as a roadmap for onboarding
+                    programmers.
+                </p>
+                <p>
+                    Example: <a href="https://trambar.io/deco-demo/" target="_blank">Source decoration of the Trambar client</a>
+                </p>
             </div>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/translation.jpg') %>">
@@ -145,7 +215,6 @@
         </section>
 
         <h2>Gateway to issue tracker</h2>
-
         <section>
             <div class="graphics">
                 <img class="sketch" src="<%= require('img/gateway.jpg') %>">
