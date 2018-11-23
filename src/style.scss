@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 BODY {
     font-family: monospace;
     font-size: 1.25em;
@@ -18,17 +22,45 @@ BODY {
     align-items: center;
 
     .bar {
-        padding: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: row;
+        padding: 2px 2px 2px 2px;
         max-width: 60em;
         width: 100%;
         background-color: #111;
         color: #eee;
+
+        .button {
+            flex: 1 1 auto;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 4px 5px 3px 5px;
+            border: 2px solid transparent;
+
+            &:link, &:visited {
+                color: #eee;
+                text-decoration: none;
+
+                &:hover {
+                    border-color: #eee;
+                }
+            }
+        }
+
+        &.desktop {
+        }
+
+        &.mobile {
+            display: none;
+        }
     }
 }
 
 .page {
     max-width: 60em;
-    padding-top: 2em;
+    padding-top: 2.5em;
     width: 100%;
 
     HEADER, SECTION, FOOTER {
@@ -63,6 +95,18 @@ BODY {
         }
     }
 
+    SECTION {
+        &:nth-of-type(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .sketch {
+            width: 400px;
+            height: 400px;
+            box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.25);
+        }
+    }
+
     H2 {
         background-color: #111;
         color: #eee;
@@ -89,17 +133,85 @@ BODY {
             color: #330099;
         }
     }
+}
 
-    .sketch {
-        width: 400px;
-        height: 400px;
-        box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.25);
+@media only screen and (max-width: 700px) {
+    BODY {
+        font-size: 1em;
+    }
+
+    .top-nav {
+        .bar {
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: flex;
+            }
+        }
+    }
+
+    .page {
+        max-width: 60em;
+        padding-top: 5.5em;
+        width: 100%;
+
+        HEADER, SECTION, FOOTER {
+            display: flex;
+            flex-direction: column;
+
+            .graphics {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .text {
+                padding: 0 1em 0 1em;
+                line-height: 135%;
+            }
+        }
+
+        HEADER {
+
+            .graphics {
+                text-align: center;
+
+                .logo {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+
+            .text {
+                padding-top: 0;
+            }
+        }
+
+        SECTION {
+            &:nth-of-type(odd) {
+                flex-direction: column;
+            }
+
+            .sketch {
+                width: 100%;
+                height: auto;
+                box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        H2 {
+            text-align: left;
+            padding: 0.25em 0.5em 0.20em 0.5em;
+            margin-top: 0.5em;
+        }
     }
 }
 
 @media print {
-    body {
+    BODY {
         background-color: none;
+        font-size: 1em;
     }
 
     .top-nav {
