@@ -229,10 +229,12 @@ BODY {
             background-color: none;
         }
 
-        .sketch {
-            max-width: 35vw;
-            height: auto;
-            box-shadow: none;
+        SECTION {
+            .sketch {
+                max-width: 35vw;
+                height: auto;
+                box-shadow: none;
+            }
         }
     }
 }
